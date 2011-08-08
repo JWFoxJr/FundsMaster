@@ -62,4 +62,18 @@ CREATE TABLE `history` (
   `year` CHAR(4) NOT NULL,
   KEY `id` (`id`),
   KEY `rtcode` (`rtcode`)
-) ENGINE=InnoDB;
+  ) ENGINE=InnoDB;
+
+--
+-- Table structure for logins table
+--
+
+DROP TABLE IF EXISTS `logins`;
+
+CREATE TABLE `logins` (
+  `userid` INT(5) NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(20) NOT NULL,
+  `email` VARCHAR(50) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`userid`)
+  ) ENGINE=InnoDB;
