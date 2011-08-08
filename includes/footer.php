@@ -11,5 +11,10 @@
 
 ?>
 
+    <div id="footer">
+        <p class="copyright">
+           &copy; 2011 - Joe Fox
+        </p>
+    </div>
 </body>
 </html>
