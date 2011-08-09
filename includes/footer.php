@@ -11,7 +11,7 @@
 
 ?>
 
-    <div id="footer">
+    <div id="footer" style="position:absolute; width:960px; top:450px; left:0; background-color:cyan;">
         <p class="copyright">
            &copy; 2011 - Joe Fox
         </p>

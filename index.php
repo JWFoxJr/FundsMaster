@@ -7,8 +7,9 @@
  */
  
 include ('includes/header.php');
-
-echo '    <p>This is a test</p>';
-
-include ('includes/footer.php');
+include ('includes/sidebar.php');
 ?>
+    <div id="main" style="position:absolute; left: 320px; top: 100px; width: 640px; height: 350px; background-color: pink;">
+        <p>This is a test</p>
+    </div>
+<?php include ('includes/footer.php');?>
