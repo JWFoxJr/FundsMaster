@@ -23,7 +23,7 @@
 
 
 
-<div id="sidebar" style="position:absolute; width:320px; height:350px; top:100px; left:0; background-color: yellow;">
+<div id="sidebar">
 
 <div id="accordion">
 	<h3><a href="#">Administration</a></h3>
@@ -71,6 +71,7 @@
             </ul>
         </p>
     </div>
+</div>
 </div>
 
 

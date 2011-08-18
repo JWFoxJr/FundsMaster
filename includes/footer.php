@@ -11,10 +11,13 @@
 
 ?>
 
-    <div id="footer" style="position:absolute; width:960px; top:450px; left:0; background-color:cyan;">
+    <div id="footer">
         <p class="copyright">
            &copy; 2011 - Joe Fox
+           <br>
+           All Rights Reserved
         </p>
+    </div>
     </div>
 </body>
 </html>
