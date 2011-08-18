@@ -16,4 +16,5 @@ except for the external libraries listed below.
 ## EXTERNAL LIBRARIES
 
 - [Smarty](http://smarty.net) (Included)
+- [jQuery](http://jquery.org) (Included)
 
