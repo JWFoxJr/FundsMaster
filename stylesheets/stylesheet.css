@@ -1,20 +1,34 @@
 #main {
-    background-color: lavender;
+    background-color: #ffffff;
 }
 
 #sidebar {
-    background-color: yellow;
+    background-color: #ffffff;
+    color: #00008b;
     float: left;
     width: 20%;
 }
 
 #body {
-    background-color: pink;
+    background-color: #ffffff;
+    color: #00008b;
     float: left;
     width: 80%;
 }
 
 #footer {
-    background-color: cyan;
+    background-color: #ffffff;
     clear: both;
 }
+
+a.sidebar:link {
+    color: #00008b;
+    text-decoration: none;
+}
+
+a.sidebar:visited {
+    color: #00008b;
+}
+ a.sidebar:hover {
+     color: #00008b;
+ }

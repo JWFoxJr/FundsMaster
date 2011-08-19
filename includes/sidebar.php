@@ -26,11 +26,11 @@
 <div id="sidebar">
 
 <div id="accordion">
-	<h3><a href="#">Administration</a></h3>
+	<h3><a href="#" class="sidebar">Administration</a></h3>
 	<div>
 		<p>Administration Menu</p>
 	</div>
-	<h3><a href="#">Address Master Menu</a></h3>
+	<h3><a href="#" class="sidebar">Address Master Menu</a></h3>
 	<div>
 		<p>
 		    <ul>
@@ -41,7 +41,7 @@
              </ul>
 		</p>
 	</div>
-	<h3><a href="#">Current Year Master Menu</a></h3>
+	<h3><a href="#" class="sidebar">Current Year Master Menu</a></h3>
 	<div>
 		<p>
 		    <ul>
@@ -51,7 +51,7 @@
             </ul>
 		</p>
 	</div>
-	<h3><a href="#">History</a></h3>
+	<h3><a href="#" class="sidebar">History</a></h3>
 	<div>
 		<p>
 		    <ul>
@@ -61,7 +61,7 @@
             </ul>
 		</p>
 	</div>
-    <h3><a href="#">Reports</a></h3>
+    <h3><a href="#" class="sidebar">Reports</a></h3>
     <div>
         <p>
             <ul>
