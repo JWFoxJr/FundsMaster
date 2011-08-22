@@ -9,6 +9,16 @@
 include ('includes/header.php');
 include ('includes/sidebar.php');
 ?>
+ <script>
+	$(function() {
+		$( "#accordion" ).accordion({
+            active:false,
+            collapsable: true,
+            event: 'click'
+        });
+	});
+</script>
+
     <div id="body">
         <h3>This is a test</h3>
     </div>

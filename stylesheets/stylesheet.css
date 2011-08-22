@@ -18,7 +18,14 @@
 
 #footer {
     background-color: #ffffff;
+    color: #00008b;
     clear: both;
+    font-size: 10pt;
+
+}
+
+#title {
+    font-style: italic;
 }
 
 a.sidebar:link {
@@ -31,4 +38,23 @@ a.sidebar:visited {
 }
  a.sidebar:hover {
      color: #00008b;
- }
+}
+
+p.title {
+    font-size: 24pt;
+    font-weight: bold;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+sup {
+    color: #ff0000;
+}
+label {
+width:30%;
+float:left;
+text-align:right;
+padding-right: 10px;
+}
