@@ -7,24 +7,34 @@
  */
 
 function validateNonEmpty(inputField, helpText) {
-
-    // See if the input value contains any text.
-
-    if (inputField.value.length == 0) {
-
-        // The data is invalid, so set the help message
-
-        if (helpText != null)
+        // See if the input value contains any text
+        if (inputField.value.length == 0) {
+          // The data is invalid, so set the help message
+          if (helpText != null)
             helpText.innerHTML = "Please enter a value.";
-        return False;
-    }
-
-    else {
-
-        // The data is OK, so clear the help message
-
-        if (helpText != null)
+          return false;
+        }
+        else {
+          // The data is OK, so clear the help message
+          if (helpText != null)
             helpText.innerHTML = "";
-        return True;
-    }
-}
+          return true;
+        }
+      }
+
+      function validateLength(minLength, maxLength, inputField, helpText) {
+        // See if the input value contains at least minLength but no more than maxLength characters
+        if (inputField.value.length < minLength || inputField.value.length > maxLength) {
+          // The data is invalid, so set the help message
+          if (helpText != null)
+            helpText.innerHTML = "Please enter a value " + minLength + " to " + maxLength +
+              " characters in length.";
+          return false;
+        }
+        else {
+          // The data is OK, so clear the help message
+          if (helpText != null)
+            helpText.innerHTML = "";
+          return true;
+        }
+      }

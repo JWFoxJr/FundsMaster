@@ -22,7 +22,7 @@
 	    <div>
 		    <p>
 		        <ul>
-                    <a href="newaddress.php" class="sidebar">New Address</a>
+                    <a href="manageaddresses.php" class="sidebar">New Address</a>
                     <li>Change Address</li>
                     <li>Delete Address</li>
                     <li>Route Master</li>

@@ -28,12 +28,17 @@ include('includes/sidebar.php');
             <form method="post" action="manageaddresses.php">
                 <input type="hidden" id="addrmgmt" name="addrmgmt" value="2">
                 <label for="resident">Resident:</label>
-                <input type="text" id="resident" name="resident" maxlength="50" onchange="validateNonEmpty(this, document.getElementById('helpText'));"> <sup>*</sup><br>
-                    <span id="helpText" class="help"></span>
+                <input type="text" id="resident" name="resident" maxlength="30" size="30"
+                       onblur="validateLength(1, 32, this, document.getElementById('message_help'))"> <sup>*</sup><br>
+                    <sup><span id="message_help" class="help"></span></sup>
                 <label for="house">House Number:</label>
-                <input type="text" id="house" name="house" maxlength="4" onblur="validateNonEmpty(this);"> <sup>*</sup><br>
+                <input type="text" id="house" name="house" maxlength="4" size=4
+                       onblur="validateNonEmpty(this, document.getElementById('house_help'))"> <sup>*</sup><br>
+                    <span id="house_help" class="help"></span>
                 <label for="street">Street:</label>
-                <input type="text" id="street" name="street" maxlength="50" onblur="validateNonEmpty(this);"> <sup>*</sup><br>
+                <input type="text" id="street" name="street" maxlength="50" size="50"
+                       onblur="validateNonEmpty(this, document.getElementById('street_help'));"> <sup>*</sup><br>
+                    <span id="street_help" class="help"></span>
                 <label for="suffix">Suffix:</label>
                 <input type="text" id="suffix" name="suffix" maxlength="4"><br>
                 <label for="apt">Apartment:</label>
