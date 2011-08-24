@@ -80,11 +80,11 @@ if ($_POST["addrmgmt"] =="1") {
 try {
     $dbh = new PDO("mysql:host=$hostname;dbname=fundsmaster", $username, $password);
     /*** echo a message saying we have connected ***/
-    echo "Connected to database";
+    echo "Connected to database<br>";
 
 
     /*** prepare the SQL statement ***/
-    $sql = "SELECT * FROM addresses";
+    $sql = "SELECT DISTINCT street FROM address ORDER BY street ASC";
 
     /*** fetch into an PDOStatement object ***/
     $stmt = $dbh->query($sql);
@@ -92,14 +92,18 @@ try {
     /*** echo number of columns ***/
     $obj = $stmt->fetch(PDO::FETCH_OBJ);
 
+
+
     /*** loop of the results ***/
-    foreach($obj as $street)
-        { ?>
-        <select name="street" id="street">
-            <option value="$street"><?php echo $street;?></option>
-        </select>
-     <?php
-        }
+    /*echo $obj->street."<br>";*/
+    /*echo "<select>";*/
+    foreach($stmt as $address){
+        echo $address["street"]."<br>";
+            /*echo "<option name=\"".$address["street"]."\">".$address["street"]."</option>";*/
+    }
+    unset($address);
+    /*echo "</select><br>";*/
+
     $count = $stmt->rowCount();
            print ("$count addresses \n");
 
