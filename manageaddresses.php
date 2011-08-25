@@ -90,22 +90,23 @@ try {
     $stmt = $dbh->query($sql);
 
     /*** echo number of columns ***/
-    $obj = $stmt->fetch(PDO::FETCH_OBJ);
+    $result = $stmt->fetchALL(PDO::FETCH_COLUMN,0);
+    //$result = $stmt->fetchAll(PDO::FETCH_COLUMN|PDO::FETCH_UNIQUE,0);
 
-
-
+    echo "<br>";
+            echo round(memory_get_usage() / (1024*1024),3) .' MB<br><br>';
     /*** loop of the results ***/
-    /*echo $obj->street."<br>";*/
-    /*echo "<select>";*/
-    foreach($stmt as $address){
-        echo $address["street"]."<br>";
-            /*echo "<option name=\"".$address["street"]."\">".$address["street"]."</option>";*/
+
+    //echo "<select size=\"10\">";
+    foreach($result as $key=>$street){
+        echo $key." - Street is ".$street. "<br>";
+    //        echo "<option name=\"".$street."\">".$street."</option>";
     }
-    unset($address);
-    /*echo "</select><br>";*/
+    unset($street);
+   // echo "</select><br>";
 
     $count = $stmt->rowCount();
-           print ("$count addresses \n");
+           print ("$count streets \n");
 
         $dbh = null;
 
