@@ -6,7 +6,8 @@
  * Time: 1:56 AM
  * To change this template use File | Settings | File Templates.
  */
- 
+
+require_once("includes/functions.php");
 include('includes/header.php');
 include('includes/sidebar.php');
 ?>
@@ -33,9 +34,10 @@ include('includes/sidebar.php');
                        onblur="validateNonEmpty(this, document.getElementById('house_help'))"> <sup>*</sup><br>
                     <span id="house_help" class="help"></span>
                 <label for="street">Street:</label>
-                <input type="text" id="street" name="street" maxlength="50" size="50"
+                <!--<input type="text" id="street" name="street" maxlength="50" size="50"
                        onblur="validateNonEmpty(this, document.getElementById('street_help'));"> <sup>*</sup><br>
-                    <span id="street_help" class="help"></span>
+                    <span id="street_help" class="help"></span>-->
+                <?php ListStreets(); ?>
                 <label for="suffix">Suffix:</label>
                 <input type="text" id="suffix" name="suffix" maxlength="4"><br>
                 <label for="apt">Apartment:</label>
@@ -65,58 +67,5 @@ include('includes/sidebar.php');
         </div>
 
     <?php include("includes/footer.php"); ?>
-<?php
-/*** mysql hostname ***/
-$hostname = "localhost";
 
-/*** mysql username ***/
-$username = "root";
-
-/*** mysql password ***/
-$password = "#--5ql4dm1n--#";
-
-if ($_POST["addrmgmt"] =="1") {
-
-try {
-    $dbh = new PDO("mysql:host=$hostname;dbname=fundsmaster", $username, $password);
-    /*** echo a message saying we have connected ***/
-    echo "Connected to database<br>";
-
-
-    /*** prepare the SQL statement ***/
-    $sql = "SELECT DISTINCT street FROM address ORDER BY street ASC";
-
-    /*** fetch into an PDOStatement object ***/
-    $stmt = $dbh->query($sql);
-
-    /*** echo number of columns ***/
-    $result = $stmt->fetchALL(PDO::FETCH_COLUMN,0);
-    //$result = $stmt->fetchAll(PDO::FETCH_COLUMN|PDO::FETCH_UNIQUE,0);
-
-    echo "<br>";
-            echo round(memory_get_usage() / (1024*1024),3) .' MB<br><br>';
-    /*** loop of the results ***/
-
-    //echo "<select size=\"10\">";
-    foreach($result as $key=>$street){
-        echo $key." - Street is ".$street. "<br>";
-    //        echo "<option name=\"".$street."\">".$street."</option>";
-    }
-    unset($street);
-   // echo "</select><br>";
-
-    $count = $stmt->rowCount();
-           print ("$count streets \n");
-
-        $dbh = null;
-
-    /*** close the database connection ***/
-    $dbh = null;
-
-        }
-catch(PDOException $e)
-    {
-    echo $e->getMessage();
-    }
-}
-?>
+    <?php echo round(memory_get_usage() / (1024*1024),3) .' MB'; ?>
