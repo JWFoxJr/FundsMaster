@@ -17,18 +17,14 @@
 	    <h3><a href="#" class="sidebar">Administration</a></h3>
 	    <div>
 		    <p>Administration Menu</p>
+
 	    </div>
 	    <h3><a href="#" class="sidebar">Address Master Menu</a></h3>
 	    <div>
-		    <p>
-		        <ul>
-                    <a href="manageaddresses.php" class="sidebar">New Address</a>
-                    <li>Change Address</li>
-                    <li>Delete Address</li>
-                    <li>Route Master</li>
-                </ul>
-		    </p>
-	    </div>
+		         <a href="manageaddresses.php?action=add" class="sidebar">New Address</a><br>
+                 <a href="manageaddresses.php?action=change" class="sidebar">Change Address</a><br>
+                 <a href="manageaddresses.php?action=delete" class="sidebar">Delete Address</a>
+		</div>
 	    <h3><a href="#" class="sidebar">Current Year Master Menu</a></h3>
 	    <div>
 		    <p>

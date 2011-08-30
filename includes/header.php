@@ -14,6 +14,7 @@
 <html>
 <head>
   <title>FundsMaster Console</title>
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="images/favicon.ico">
   <script type="text/javascript" src="extlib/jquery/js/jquery-1.6.2.min.js"></script>
   <script type="text/javascript" src="extlib/jquery/js/jquery-ui-1.8.15.custom.min.js"></script>
   <script type="text/javascript" src="js/functions.js"></script>
