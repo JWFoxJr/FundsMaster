@@ -9,31 +9,22 @@
  * @todo: Add additional functions code.
  */
 
-/*** mysql hostname ***/
-$hostname = "localhost";
-
-/*** mysql username ***/
-$username = "root";
-
-/*** mysql password ***/
-$password = "#--5ql4dm1n--#";
-
 function ListStreets() {
 
     /*** mysql hostname ***/
-    $hostname = "localhost";
+    $hostname = 'localhost';
 
     /*** mysql username ***/
-    $username = "root";
+    $username = 'root';
 
     /*** mysql password ***/
-    $password = "#--5ql4dm1n--#";
+    $password = '#--5ql4dm1n--#';
 
     try {
-    $dbh = new PDO("mysql:host=$hostname;dbname=fundsmaster", $username, $password);
+    $dbh = new PDO('mysql:host='.$hostname.';dbname=fundsmaster', $username, $password);
 
     /*** prepare the SQL statement ***/
-    $sql = "SELECT DISTINCT street FROM address ORDER BY street ASC";
+    $sql = 'SELECT DISTINCT street FROM address ORDER BY street ASC';
 
     /*** fetch into an PDOStatement object ***/
     $stmt = $dbh->query($sql);
@@ -43,13 +34,13 @@ function ListStreets() {
 
     /*** loop of the results ***/
 
-    echo "<select>";
-        echo "<option name=\"---\" value=\"---\">---</option>";
+    echo '<select name="street" id="street">';
+        echo '<option name="---" value="---">---</option>';
     foreach($result as $street){
-        echo "<option name=\"".$street."\">".$street."</option>";
+        echo '<option name="'.$street.'">'.$street.'</option>';
         }
     unset($street);
-    echo "</select>";
+    echo '</select>';
 
     /*** close the database connection ***/
     $dbh = null;
@@ -64,19 +55,19 @@ function ListStreets() {
 function UpdateAddress(){
 
     /*** mysql hostname ***/
-    $hostname = "localhost";
+    $hostname = 'localhost';
 
     /*** mysql username ***/
-    $username = "root";
+    $username = 'root';
 
     /*** mysql password ***/
-    $password = "#--5ql4dm1n--#";
+    $password = '#--5ql4dm1n--#';
 
     try {
-    $dbh = new PDO("mysql:host=$hostname;dbname=fundsmaster", $username, $password);
+    $dbh = new PDO('mysql:host='.$hostname.';dbname=fundsmaster', $username, $password);
 
     /*** prepare the SQL statement ***/
-    $sql = "SELECT DISTINCT street FROM address ORDER BY street ASC";
+    $sql = 'SELECT DISTINCT street FROM address ORDER BY street ASC';
 
     /*** fetch into an PDOStatement object ***/
     $stmt = $dbh->query($sql);
@@ -90,9 +81,9 @@ function UpdateAddress(){
     <script type="text/javascript">
         function ChangeAddress(str) {
 
-        if (str=="")
+        if (str=='')
         {
-            document.getElementById("txtHint").innerHTML="";
+            document.getElementById('txtHint').innerHTML='';
             return;
         }
         if (window.XMLHttpRequest)
@@ -101,27 +92,27 @@ function UpdateAddress(){
         }
         else
         {// code for IE6, IE5
-            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            xmlhttp=new ActiveXObject('Microsoft.XMLHTTP');
         }
             xmlhttp.onreadystatechange=function()
         {
             if (xmlhttp.readyState==4 && xmlhttp.status==200)
             {
-                document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+                document.getElementById('txtHint').innerHTML=xmlhttp.responseText;
             }
         }
-        xmlhttp.open("GET","includes/ajax.php?q="+str,true);
+        xmlhttp.open('GET','includes/ajax.php?q='+str,true);
         xmlhttp.send();
         }
     </script>
     <?php
-    echo "<select name=\"streets\" size=\"5\" onchange=\"ChangeAddress(this.value)\">";
-        //echo "<option name=\"---\" value=\"---\">---</option>";
+    echo '<select name="streets" size="5" onchange="ChangeAddress(this.value)">';
+        //echo '<option name="---" value="---">---</option>';
     foreach($result as $street){
-        echo "<option name=\"".$street."\" value=\"".$street."\">".$street."</option>";
+        echo '<option name="'.$street.'" value="'.$street.'">'.$street.'</option>';
         }
     unset($street);
-    echo "</select>";
+    echo '</select>';
 
     /*** close the database connection ***/
     $dbh = null;
@@ -136,19 +127,19 @@ function UpdateAddress(){
 function ListRoutes() {
 
     /*** mysql hostname ***/
-    $hostname = "localhost";
+    $hostname = 'localhost';
 
     /*** mysql username ***/
-    $username = "root";
+    $username = 'root';
 
     /*** mysql password ***/
-    $password = "#--5ql4dm1n--#";
+    $password = '#--5ql4dm1n--#';
 
     try {
-        $dbh = new PDO("mysql:host=$hostname;dbname=fundsmaster", $username, $password);
+        $dbh = new PDO('mysql:host='.$hostname.';dbname=fundsmaster', $username, $password);
 
         /*** prepare the SQL statement ***/
-        $sql = "SELECT rtcode, description FROM routes ORDER BY rtcode ASC";
+        $sql = 'SELECT rtcode, description FROM routes ORDER BY rtcode ASC';
 
         /*** fetch into an PDOStatement object ***/
         $stmt = $dbh->query($sql);
@@ -157,22 +148,22 @@ function ListRoutes() {
         $result = $stmt->fetchALL();
 
         /*** loop of the results ***/
-        if ( isset ( $_GET['action'] ) && $_GET['action'] == "add" ){
+        if ( isset ( $_GET['action'] ) && $_GET['action'] == 'add' ){
 
-        echo "<select>";
+        echo '<select name="rtcode" id="rtcode">';
         foreach($result as $routes){
-            echo "<option name=\"".$routes[0]."\">".$routes[0]." - ".$routes[1]."</option>";
+            echo '<option name="'.$routes[0].'">'.$routes[0].' - '.$routes[1].'</option>';
         }
         unset($routes);
-        echo "</select><br>";
+        echo '</select><br>';
 
         } else {
-            echo "<select onchange=\"showHouses(this.value)\">";
+            echo '<select onchange="showHouses(this.value)">';
             foreach($result as $routes){
-                echo "<option name=\"".$routes[0]."\">".$routes[0]." - ".$routes[1]."</option>";
+                echo '<option name="'.$routes[0].'">'.$routes[0].' - '.$routes[1].'</option>';
             }
             unset($routes);
-            echo "</select><br>";
+            echo '</select><br>';
         }
 
         /*** close the database connection ***/

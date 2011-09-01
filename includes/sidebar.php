@@ -1,16 +1,3 @@
-<?php
-/**
- * File name: sidebar.php
- * User: joe@jwfoxjr.com
- * Date: 8/9/11
- * Time: 9:52 AM
- *
- *
- * @todo: Need to create either AJAX or JS based menu structure
- */
- 
-?>
-
     <div id="sidebar">
 
     <div id="accordion">
@@ -21,9 +8,9 @@
 	    </div>
 	    <h3><a href="#" class="sidebar">Address Master Menu</a></h3>
 	    <div>
-		         <a href="manageaddresses.php?action=add" class="sidebar">New Address</a><br>
-                 <a href="manageaddresses.php?action=change" class="sidebar">Change Address</a><br>
-                 <a href="manageaddresses.php?action=delete" class="sidebar">Delete Address</a>
+		         <a href="index.php?action=add" class="sidebar">New Address</a><br>
+                 <a href="index.php?action=change" class="sidebar">Change Address</a><br>
+                 <a href="index.php?action=delete" class="sidebar">Delete Address</a>
 		</div>
 	    <h3><a href="#" class="sidebar">Current Year Master Menu</a></h3>
 	    <div>

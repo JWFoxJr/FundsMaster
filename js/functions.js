@@ -38,3 +38,4 @@ function validateNonEmpty(inputField, helpText) {
           return true;
         }
       }
+

@@ -8,18 +8,15 @@
  
 include ('includes/header.php');
 include ('includes/sidebar.php');
-?>
- <script>
-	$(function() {
-		$( "#accordion" ).accordion({
-            active:false,
-            collapsable: true,
-            event: 'click'
-        });
-	});
-</script>
+require_once('includes/functions.php');
 
-    <div id="body">
-        <h3>This is a test</h3>
-    </div>
-    <?php include ('includes/footer.php');?>
+    if ( isset ( $_GET['action'] ) && $_GET['action'] == "add" ){
+        include('webapp/add.php');
+    }elseif ( isset ( $_GET['action'] ) && $_GET['action'] == "change" ) {
+        include('webapp/change.php');
+    } elseif ( isset ( $_GET['action'] ) && $_GET['action'] == "delete" ) {
+        include('webapp/delete.php');
+    } else {
+        include('webapp/main.php');
+    }
+include ('includes/footer.php');?>

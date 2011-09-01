@@ -1,29 +1,3 @@
-<?php
-/**
- * Created by JetBrains PhpStorm.
- * User: jwfoxjr
- * Date: 8/21/11
- * Time: 1:56 AM
- * To change this template use File | Settings | File Templates.
- */
-
-require_once("includes/functions.php");
-include('includes/header.php');
-include('includes/sidebar.php');
-?>
-
-    <script>
-	    $(function() {
-		    $( "#accordion" ).accordion({
-                active: 1,
-                collapsable: true,
-                event: 'click'
-        });
-	});
-    </script>
-<?php
-    if ( isset ( $_GET['action'] ) && $_GET['action'] == "add" ){
-?>
         <div id="body">
             <form method="post" action="<?php echo htmlentities("$_SERVER[PHP_SELF]");?>">
                 <input type="hidden" id="addrmgmt" name="addrmgmt" value="1">
@@ -64,22 +38,3 @@ include('includes/sidebar.php');
                 <sup>*</sup> Required Field
             </form>
         </div>
-<?php
-}elseif ( isset ( $_GET['action'] ) && $_GET['action'] == "change" ) {
-
-    echo "Change forms go in here!<br>";
-
-    echo "<form method=\"post\" action=\"".htmlentities("$_SERVER[PHP_SELF]")."\">";
-        UpdateAddress();
-    echo "</p>";
-    echo "<p id=\"txtHint\"></p>";
-    echo "<div style=\"text-align: center; width: 80%\"><input type=\"submit\" name=\"change\" value=\"Change Address\"></div>";
-    
-} else { ( isset ( $_GET['action'] ) && $_GET['action'] == "delete" );
-
-    echo "We're going to delete some stuff!";
-}
-?>
-    <?php include("includes/footer.php"); ?>
-
-    <?php echo round(memory_get_usage() / (1024*1024),3) .' MB'; ?>
