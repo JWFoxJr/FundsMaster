@@ -13,7 +13,7 @@ require_once('includes/functions.php');
     if ( isset ( $_GET['action'] ) && $_GET['action'] == "add" ){
         include('webapp/add.php');
     }elseif ( isset ( $_GET['action'] ) && $_GET['action'] == "change" ) {
-        include('webapp/change.php');
+        include('webapp/update.php');
     } elseif ( isset ( $_GET['action'] ) && $_GET['action'] == "delete" ) {
         include('webapp/delete.php');
     } else {
