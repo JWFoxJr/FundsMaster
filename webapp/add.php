@@ -13,7 +13,10 @@
                 <!--<input type="text" id="street" name="street" maxlength="50" size="50"
                        onblur="validateNonEmpty(this, document.getElementById('street_help'));"> <sup>*</sup><br>
                     <span id="street_help" class="help"></span>-->
-                <?php ListStreets(); ?> <sup>*</sup><br>
+                <select name="street">
+                    <?php StreetListing(); ?>
+                </select>
+                <?php StreetListing(); ?> <sup>*</sup><br>
                 <label for="suffix">Suffix:</label><br>
                 <input type="text" id="suffix" name="suffix" maxlength="4"><br>
                 <label for="apt">Apartment:</label><br>
