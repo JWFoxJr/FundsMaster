@@ -83,8 +83,9 @@ function ListRoutes() {
         if ( isset ( $_GET['action'] ) && $_GET['action'] == 'add' ){
 
         echo '<select name="rtcode" id="rtcode">';
+
         foreach($result as $routes){
-            echo '<option name="'.$routes[0].'">'.$routes[0].' - '.$routes[1].'</option>';
+            echo '<option name="'.$routes[0].'" value="'.$routes[0].'">'.$routes[0].' - '.$routes[1].'</option>';
         }
         unset($routes);
         echo '</select><br>';
