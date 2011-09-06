@@ -1,8 +1,11 @@
 <?php
 
     if (isset($_POST['change']) == 'change') {
-        echo '<div_id="body">
-            <p>This is where the actual name change goes.</p>';
+        echo '<div_id="body">';
+        echo '<p>This is where the actual name change goes.</p>';
+        echo $_POST['test'];
+        echo '</div>';
+        
     } else { ?>
 
     <script type="text/javascript">
@@ -39,7 +42,7 @@
             <form method="post" action="<?php htmlentities("$_SERVER[PHP_SELF]") ?>">
                 <?php UpdateAddress(); ?>
             
-            <select id="txtHint" size="5"></select>
+            <select id="txtHint" name="test" size="5"></select>
             <div style="text-align: center; width: 80%"><input type="submit" name="change" value="Change Address"></div>
             </form>
 
