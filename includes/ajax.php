@@ -34,7 +34,7 @@
 
     echo '<select size="5">';
     foreach($result as $house){
-        echo '<option name="'.$house[3].' value="'.$house[3].'">'.$house[0].' '.$house[1].' '.$house[2].'</option>';
+        echo '<option name="'.$house[3].'" value="'.$house[3].'">'.$house[0].' '.$house[1].' '.$house[2].'</option>';
     }
     unset($street);
     echo '</select>';
