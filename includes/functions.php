@@ -110,6 +110,42 @@ function ListRoutes() {
         }
 }
 
+function ChangeResident($house) {
+
+    $house = $_POST['test'];
+
+    /*** mysql hostname ***/
+    $hostname = 'localhost';
+
+    /*** mysql username ***/
+    $username = 'root';
+
+    /*** mysql password ***/
+    $password = '#--5ql4dm1n--#';
+
+    try {
+    $dbh = new PDO('mysql:host='.$hostname.';dbname=fundsmaster', $username, $password);
+
+    /*** prepare the SQL statement ***/
+    $sql = 'SELECT resident FROM address WHERE id = '.$house;
+
+    /*** fetch into an PDOStatement object ***/
+    $stmt = $dbh->query($sql);
+
+    /*** echo number of columns ***/
+    $result = $stmt->fetchALL(PDO::FETCH_COLUMN,0);
+
+    echo $result[0];
+
+    /*** close the database connection ***/
+    $dbh = null;
+
+    }
+    catch(PDOException $e)
+        {
+        echo $e->getMessage();
+        }
+}
 
 function UpdateRoutes() {
 

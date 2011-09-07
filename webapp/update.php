@@ -1,11 +1,18 @@
 <?php
 
     if (isset($_POST['change']) == 'change') {
-        echo '<div_id="body">';
-        echo '<p>This is where the actual name change goes.</p>';
-        echo $_POST['test'];
-        echo '</div>';
-        
+?>
+    <div id="body">
+        <form method="post" action="<?php htmlentities("$_SERVER[PHP_SELF]"); ?>">
+              <label for="resident">Resident:</label><br>
+              <input type="text" id="resident" name="resident" maxlength="30" size="30" value="<?php ChangeResident($_POST['test']); ?>">
+              <input type="submit" name="change" value="Change Resident">
+        </form>
+    </div>
+
+
+<?php        
+
     } else { ?>
 
     <script type="text/javascript">
