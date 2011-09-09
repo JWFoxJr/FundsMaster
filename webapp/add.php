@@ -34,7 +34,9 @@
                 <label for="plus4">PLUS4:</label><br>
                 <input type="text" id="plus4" name="plus4" maxlength="4"><br>
                 <label for="rtcode">Route Code:</label><br>
-                <?php ListRoutes(); ?>
+                <select name="rtcode" id="rtcode">
+                    <?php ListRoutes(); ?>
+                </select><br>
                 <br><br>
                 <div style="text-align: center; width: 80%"><input type="submit" name="add" value="Add Address"></div>
                 <br>
