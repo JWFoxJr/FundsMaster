@@ -9,142 +9,36 @@
  * @todo: Add additional functions code.
  */
 
+require_once('Db.php');
+
+/*** Setup our Connection *///
+Db::setConnectionInfo('fundsmaster','root','#--5ql4dm1n--#','mysql','localhost');
+
 function StreetListing() {
-
-    /*** mysql hostname ***/
-    $hostname = 'localhost';
-
-    /*** mysql username ***/
-    $username = 'root';
-
-    /*** mysql password ***/
-    $password = '#--5ql4dm1n--#';
-
-    try {
-    $dbh = new PDO('mysql:host='.$hostname.';dbname=fundsmaster', $username, $password);
-
-    /*** prepare the SQL statement ***/
-    $sql = 'SELECT DISTINCT street FROM address ORDER BY street ASC';
-
-    /*** fetch into an PDOStatement object ***/
-    $stmt = $dbh->query($sql);
-
-    /*** echo number of columns ***/
-    $result = $stmt->fetchALL(PDO::FETCH_COLUMN,0);
-
-    /*** loop of the results ***/
-
-    foreach($result as $street){
-        echo '<option name="'.$street.'" value="'.$street.'">'.$street.'</option>';
-        }
-    unset($street);
-
-    /*** close the database connection ***/
-    $dbh = null;
-
+    $result = Db::getResult('SELECT DISTINCT street FROM address ORDER BY street ASC');
+    foreach($result as $key=>$street) {
+        echo '<option name="'.$street['street'].'" value="'.$street['street'].'">'.$street['street'].'</option>';
     }
-    catch(PDOException $e)
-        {
-        echo $e->getMessage();
-        }
 }
 
 function UpdateAddress(){
-
     echo '<select name="streets" size="5" onchange="ChangeAddress(this.value)">';
     StreetListing();
     echo '</select>';
 }
 
 function ListRoutes() {
-
-    /*** mysql hostname ***/
-    $hostname = 'localhost';
-
-    /*** mysql username ***/
-    $username = 'root';
-
-    /*** mysql password ***/
-    $password = '#--5ql4dm1n--#';
-
-    try {
-        $dbh = new PDO('mysql:host='.$hostname.';dbname=fundsmaster', $username, $password);
-
-        /*** prepare the SQL statement ***/
-        $sql = 'SELECT rtcode, description FROM routes ORDER BY rtcode ASC';
-
-        /*** fetch into an PDOStatement object ***/
-        $stmt = $dbh->query($sql);
-
-        /*** echo number of columns ***/
-        $result = $stmt->fetchALL();
-
+    $result = Db::getResult('SELECT rtcode, description FROM routes ORDER BY rtcode ASC');
         /*** loop of the results ***/
-        if ( isset ( $_GET['action'] ) && $_GET['action'] == 'add' ){
-
-        echo '<select name="rtcode" id="rtcode">';
-
-        foreach($result as $routes){
-            echo '<option name="'.$routes[0].'" value="'.$routes[0].'">'.$routes[0].' - '.$routes[1].'</option>';
-        }
-        unset($routes);
-        echo '</select><br>';
-
-        } else {
-            echo '<select onchange="showHouses(this.value)">';
-            foreach($result as $routes){
-                echo '<option name="'.$routes[0].'">'.$routes[0].' - '.$routes[1].'</option>';
-            }
-            unset($routes);
-            echo '</select><br>';
-        }
-
-        /*** close the database connection ***/
-        $dbh = null;
-
-    }
-    /*** show an error if we can't connect to the database ***/
-    catch(PDOException $e)
-        {
-        echo $e->getMessage();
+        foreach($result as $key=>$routes){
+            echo '<option name="'.$routes['rtcode'].'" value="'.$routes['rtcode'].'">'.$routes['rtcode'].' - '.$routes['description'].'</option>';
         }
 }
 
 function ChangeResident($house) {
-
     $house = $_POST['test'];
-
-    /*** mysql hostname ***/
-    $hostname = 'localhost';
-
-    /*** mysql username ***/
-    $username = 'root';
-
-    /*** mysql password ***/
-    $password = '#--5ql4dm1n--#';
-
-    try {
-    $dbh = new PDO('mysql:host='.$hostname.';dbname=fundsmaster', $username, $password);
-
-    /*** prepare the SQL statement ***/
-    $sql = 'SELECT resident FROM address WHERE id = '.$house;
-
-    /*** fetch into an PDOStatement object ***/
-    $stmt = $dbh->query($sql);
-
-    /*** echo number of columns ***/
-    $result = $stmt->fetchALL(PDO::FETCH_COLUMN,0);
-
-    echo $result[0];
-
-    /*** close the database connection ***/
-    $dbh = null;
-
-    }
-    catch(PDOException $e)
-        {
-        echo $e->getMessage();
-        }
+    $result = Db::getRow('SELECT resident FROM address WHERE id = '.$house);
+    echo $result['resident'];
 }
 
 function UpdateRoutes() {
