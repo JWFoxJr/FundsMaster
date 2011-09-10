@@ -36,13 +36,12 @@ function ListRoutes() {
 }
 
 function ChangeResident($house) {
-    $house = $_POST['test'];
+    $house = $_POST['house'];
     $result = Db::getRow('SELECT resident FROM address WHERE id = '.$house);
     echo $result['resident'];
 }
 
 function UpdateRoutes() {
-
 }
 
 function EntryMethod($entry_method) {
