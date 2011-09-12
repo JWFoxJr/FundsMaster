@@ -10,12 +10,14 @@ include ('includes/header.php');
 include ('includes/sidebar.php');
 require_once('includes/functions.php');
 
-    if ( isset ( $_GET['action'] ) && $_GET['action'] == "add" ){
+    if ( isset ( $_GET['action'] ) && $_GET['action'] == 'add' ){
         include('webapp/add.php');
-    }elseif ( isset ( $_GET['action'] ) && $_GET['action'] == "update" ) {
+    }elseif ( isset ( $_GET['action'] ) && $_GET['action'] == 'update' ) {
         include('webapp/update.php');
-    } elseif ( isset ( $_GET['action'] ) && $_GET['action'] == "delete" ) {
+    } elseif ( isset ( $_GET['action'] ) && $_GET['action'] == 'delete' ) {
         include('webapp/delete.php');
+    } elseif ( isset ( $_GET['action'] ) && $_GET['action'] == 'routes') {
+        include('webapp/admin.php');
     } else {
         include('webapp/main.php');
     }

@@ -41,7 +41,11 @@ function ChangeResident($house) {
     echo $result['resident'];
 }
 
-function UpdateRoutes() {
+function UpdateRoutes($rtcode) {
+    $rtcode = $_POST['rtcode'];
+    $result = Db::getRow('SELECT * FROM routes WHERE rtcode='.$_POST['rtcode']);
+    echo '<label for="rtassignment">Update Assignment for route '. $result['rtcode'].' - '.$result['description'].'</label><br><br>';
+    echo '<input type="text" name="rtassignment" size="20" maxlength="20" value="'.$result['assignment'].'">';
 }
 
 function EntryMethod($entry_method) {

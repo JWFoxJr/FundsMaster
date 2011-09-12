@@ -3,14 +3,14 @@
     <div id="accordion">
 	    <h3><a href="#" class="sidebar">Administration</a></h3>
 	    <div>
-		    <p>Administration Menu</p>
+		    <a href="index.php?action=routes" class="sidebar">Manage Routes</a>
 
 	    </div>
 	    <h3><a href="#" class="sidebar">Address Master Menu</a></h3>
 	    <div>
-		         <a href="index.php?action=add" class="sidebar">New Address</a><br>
-                 <a href="index.php?action=update" class="sidebar">Update Address</a><br>
-                 <a href="index.php?action=delete" class="sidebar">Delete Address</a>
+		    <a href="index.php?action=add" class="sidebar">New Address</a><br>
+            <a href="index.php?action=update" class="sidebar">Update Address</a><br>
+            <a href="index.php?action=delete" class="sidebar">Delete Address</a>
 		</div>
 	    <h3><a href="#" class="sidebar">Current Year Master Menu</a></h3>
 	    <div>
