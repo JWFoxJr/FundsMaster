@@ -37,7 +37,7 @@ function ListRoutes() {
 
 function ShowResident() {
     $varHouse = $_POST['lstSelectHouse'];
-    $varResident = Db::getRow('SELECT resident FROM address WHERE id = '.$varHouse);
+    $varResident = Db::getRow('SELECT resident FROM address WHERE id = ?', $varHouse);
     echo $varResident['resident'];
 }
 
