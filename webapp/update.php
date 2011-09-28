@@ -5,7 +5,7 @@
     <div id="body">
         <form method="post" action="<?php htmlentities("$_SERVER[PHP_SELF]"); ?>">
               <label for="resident">Resident:</label><br>
-              <input type="text" id="resident" name="resident" maxlength="30" size="30" value="<?php ChangeResident(); ?>">
+              <input type="text" id="resident" name="<?php echo $_POST['lstSelectHouse']; ?>" maxlength="30" size="30" value="<?php ShowResident(); ?>">
               <input type="submit" name="btnChangeResident" value="Change Resident">
         </form>
     </div>
@@ -49,7 +49,7 @@
             <form method="post" action="<?php htmlentities("$_SERVER[PHP_SELF]") ?>">
                 <?php UpdateAddress(); ?>
             
-            <select id="txtHint" name="house" size="5"></select>
+            <select id="txtHint" name="lstSelectHouse" size="5"></select>
             <div style="text-align: center; width: 80%"><input type="submit" name="btnSelectHouse" value="Select House"></div>
             </form>
 

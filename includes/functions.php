@@ -35,10 +35,10 @@ function ListRoutes() {
         }
 }
 
-function ChangeResident() {
-    $house = $_POST['house'];
-    $result = Db::getRow('SELECT resident FROM address WHERE id = '.$house);
-    echo $result['resident'];
+function ShowResident() {
+    $varHouse = $_POST['lstSelectHouse'];
+    $varResident = Db::getRow('SELECT resident FROM address WHERE id = '.$varHouse);
+    echo $varResident['resident'];
 }
 
 function UpdateRoutes($rtcode) {
