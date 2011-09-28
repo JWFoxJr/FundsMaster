@@ -5,8 +5,8 @@
     <div id="body">
         <form method="post" action="<?php htmlentities("$_SERVER[PHP_SELF]"); ?>">
               <label for="resident">Resident:</label><br>
-              <input type="text" id="resident" name="resident" maxlength="30" size="30" value="<?php ChangeResident($_POST['house']); ?>">
-              <input type="submit" name="change" value="Change Resident">
+              <input type="text" id="resident" name="resident" maxlength="30" size="30" value="<?php ChangeResident(); ?>">
+              <input type="submit" name="btnChangeResident" value="Change Resident">
         </form>
     </div>
 

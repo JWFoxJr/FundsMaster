@@ -35,7 +35,7 @@ function ListRoutes() {
         }
 }
 
-function ChangeResident($house) {
+function ChangeResident() {
     $house = $_POST['house'];
     $result = Db::getRow('SELECT resident FROM address WHERE id = '.$house);
     echo $result['resident'];
