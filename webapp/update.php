@@ -16,7 +16,7 @@
     } else { ?>
 
     <script type="text/javascript">
-        function ChangeAddress(str) {
+        function GetHouses(str) {
 
         if (str=='')
         {

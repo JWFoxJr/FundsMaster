@@ -22,7 +22,7 @@ function StreetListing() {
 }
 
 function UpdateAddress(){
-    echo '<select name="streets" size="5" onchange="ChangeAddress(this.value)">';
+    echo '<select name="streets" size="5" onchange="GetHouses(this.value)">';
     StreetListing();
     echo '</select>';
 }
