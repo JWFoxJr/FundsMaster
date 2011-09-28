@@ -1,6 +1,6 @@
 <?php
 
-    if (isset($_POST['change']) == 'change') {
+    if (isset($_POST['btnSelectHouse']) == 'btnSelectHouse') {
 ?>
     <div id="body">
         <form method="post" action="<?php htmlentities("$_SERVER[PHP_SELF]"); ?>">
@@ -50,7 +50,7 @@
                 <?php UpdateAddress(); ?>
             
             <select id="txtHint" name="house" size="5"></select>
-            <div style="text-align: center; width: 80%"><input type="submit" name="change" value="Change Address"></div>
+            <div style="text-align: center; width: 80%"><input type="submit" name="btnSelectHouse" value="Select House"></div>
             </form>
 
 <?php
