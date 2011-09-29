@@ -11,9 +11,10 @@
 
 require_once('Db.php');
 
-/*** Setup our Connection *///
+/*** Setup our Connection ***/
 Db::setConnectionInfo('fundsmaster','root','#--5ql4dm1n--#','mysql','localhost');
 
+/*** Address Related Functions ***/
 function StreetListing() {
     $result = Db::getResult('SELECT DISTINCT street FROM address ORDER BY street ASC');
     foreach($result as $key=>$street) {
@@ -27,18 +28,26 @@ function UpdateAddress(){
     echo '</select>';
 }
 
-function ListRoutes() {
-    $result = Db::getResult('SELECT rtcode, description FROM routes ORDER BY rtcode ASC');
-        /*** loop of the results ***/
-        foreach($result as $key=>$varRoutes){
-            echo '<option name="'.$varRoutes['rtcode'].'" value="'.$varRoutes['rtcode'].'">'.$varRoutes['rtcode'].' - '.$varRoutes['description'].'</option>';
-        }
-}
-
 function ShowResident() {
     $varHouse = $_POST['lstSelectHouse'];
     $varResident = Db::getRow('SELECT resident FROM address WHERE id = ?', $varHouse);
     echo $varResident['resident'];
+}
+
+function ChangeResident() {
+    $varChangeResident = array('varResident' => $_POST['txtChangeResident'], 'varResidentId' => $_POST['txtResidentId']);
+    Db::execute('UPDATE address SET resident = :varResident WHERE id = :varResidentId', $varChangeResident);
+    $varResult = Db::getRow('SELECT * FROM address WHERE id =?', $varChangeResident['varResidentId']);
+    echo 'Update Completed. Resident updated to '.$varResult['resident'];
+}
+
+
+/*** Route Related Functions ***/
+function ListRoutes() {
+    $result = Db::getResult('SELECT rtcode, description FROM routes ORDER BY rtcode ASC');
+        foreach($result as $key=>$varRoutes){
+            echo '<option name="'.$varRoutes['rtcode'].'" value="'.$varRoutes['rtcode'].'">'.$varRoutes['rtcode'].' - '.$varRoutes['description'].'</option>';
+        }
 }
 
 function ShowRouteAssignment() {
@@ -47,19 +56,4 @@ function ShowRouteAssignment() {
     echo '<label for="txtRouteAssignment">Update Assignment for Route '. $result['rtcode'].' - '.$result['description'].'</label><br><br>';
     echo '<input type="text" name="txtRouteAssignment" size="20" maxlength="20" value="'.$result['assignment'].'">';
 }
-
-function ChangeResident() {
-    $varChangeResident = array('varResident' => $_POST['txtChangeResident'], 'varResidentId' => $_POST['txtResidentId']);
-    Db::execute('UPDATE address SET resident = :varResident WHERE id = :varResidentId', $varChangeResident);
-    $varResult = Db::getRow('SELECT * FROM address WHERE id =?', $varChangeResident['varResidentId']);
-    echo $varResult['id'].' - '.$varResult['resident'];
-}
-function EntryMethod($entry_method) {
-
-}
-
-function GenerateMailing($mailing) {
-
-}
-
 
