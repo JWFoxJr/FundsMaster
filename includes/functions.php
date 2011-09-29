@@ -30,8 +30,8 @@ function UpdateAddress(){
 function ListRoutes() {
     $result = Db::getResult('SELECT rtcode, description FROM routes ORDER BY rtcode ASC');
         /*** loop of the results ***/
-        foreach($result as $key=>$routes){
-            echo '<option name="'.$routes['rtcode'].'" value="'.$routes['rtcode'].'">'.$routes['rtcode'].' - '.$routes['description'].'</option>';
+        foreach($result as $key=>$varRoutes){
+            echo '<option name="'.$varRoutes['rtcode'].'" value="'.$varRoutes['rtcode'].'">'.$varRoutes['rtcode'].' - '.$varRoutes['description'].'</option>';
         }
 }
 
@@ -41,11 +41,11 @@ function ShowResident() {
     echo $varResident['resident'];
 }
 
-function UpdateRoutes($rtcode) {
-    $rtcode = $_POST['rtcode'];
-    $result = Db::getRow('SELECT * FROM routes WHERE rtcode='.$_POST['rtcode']);
-    echo '<label for="rtassignment">Update Assignment for route '. $result['rtcode'].' - '.$result['description'].'</label><br><br>';
-    echo '<input type="text" name="rtassignment" size="20" maxlength="20" value="'.$result['assignment'].'">';
+function ShowRouteAssignment() {
+    $varRouteCode = $_POST['cboRouteCode'];
+    $result = Db::getRow('SELECT * FROM routes WHERE rtcode= ? ', $varRouteCode);
+    echo '<label for="txtRouteAssignment">Update Assignment for Route '. $result['rtcode'].' - '.$result['description'].'</label><br><br>';
+    echo '<input type="text" name="txtRouteAssignment" size="20" maxlength="20" value="'.$result['assignment'].'">';
 }
 
 function EntryMethod($entry_method) {
