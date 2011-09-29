@@ -14,11 +14,7 @@
 
 <?php        
     } elseif (isset($_POST['btnChangeResident']) == 'btnChangeResident') {
-        echo 'We will have a function here that will update the record in the database. For the time being we are going to just <br>';
-        echo 'show the posted variable.<br>';
-        echo $_POST['txtResidentId'].'<br>';
-        echo $_POST['txtChangeResident'];
-        
+        ChangeResident();
     } else { ?>
 
     <script type="text/javascript">

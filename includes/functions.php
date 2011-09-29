@@ -48,6 +48,12 @@ function ShowRouteAssignment() {
     echo '<input type="text" name="txtRouteAssignment" size="20" maxlength="20" value="'.$result['assignment'].'">';
 }
 
+function ChangeResident() {
+    $varChangeResident = array('varResident' => $_POST['txtChangeResident'], 'varResidentId' => $_POST['txtResidentId']);
+    Db::execute('UPDATE address SET resident = :varResident WHERE id = :varResidentId', $varChangeResident);
+    $varResult = Db::getRow('SELECT * FROM address WHERE id =?', $varChangeResident['varResidentId']);
+    echo $varResult['id'].' - '.$varResult['resident'];
+}
 function EntryMethod($entry_method) {
 
 }
