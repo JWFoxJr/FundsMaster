@@ -12,10 +12,16 @@ if (isset ($_POST['btnSelectRoute']) == 'btnSelectRoute') {
 <?php
 
 } elseif (isset ($_POST['btnUpdateAssignment']) == 'btnUpdateAssignment') {
-    echo 'We will have a function here that will update the record in the database. For the time being we are going to just <br>';
-    echo 'show the posted variable.<br><br>';
-    echo $_POST['txtRouteId'].' - '.$_POST['txtRouteAssignment'];
-    
+//    echo 'We will have a function here that will update the record in the database. For the time being we are going to just <br>';
+//    echo 'show the posted variable.<br><br>';
+//    echo $_POST['txtRouteId'].' - '.$_POST['txtRouteAssignment'];
+?>
+    <div id="body">
+        <p><?php UpdateRouteAssignment(); ?></p>
+    </div>
+
+<?php
+
 } else {
 ?>
 

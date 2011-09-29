@@ -57,3 +57,9 @@ function ShowRouteAssignment() {
     echo '<input type="text" name="txtRouteAssignment" size="20" maxlength="20" value="'.$result['assignment'].'">';
 }
 
+function UpdateRouteAssignment() {
+    $arrRouteAssignment = array('varRouteId' => $_POST['txtRouteId'], 'varRouteAssignment' => $_POST['txtRouteAssignment']);
+    Db::execute('UPDATE routes SET assignment = :varRouteAssignment WHERE rtcode = :varRouteId', $arrRouteAssignment);
+    $varResult = Db::getRow('SELECT * FROM routes WHERE rtcode = ?', $arrRouteAssignment['varRouteId']);
+    echo 'Update Completed. Route assigned to '.$varResult['assignment'];
+}
