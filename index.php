@@ -18,7 +18,9 @@ require_once('includes/functions.php');
         include('webapp/delete.php');
     } elseif ( isset ( $_GET['action'] ) && $_GET['action'] == 'routes') {
         include('webapp/admin.php');
-    } else {
+    } elseif ( isset ($_GET['action'] ) && $_GET['action'] == 'reports') {
+        include('webapp/reports.php');
+    }else{
         include('webapp/main.php');
     }
 include ('includes/footer.php');?>

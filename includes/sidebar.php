@@ -34,13 +34,9 @@
 	    </div>
         <h3><a href="#" class="sidebar">Reports</a></h3>
         <div>
-            <p>
-                <ul>
-                    <li>Route Listing</li>
-                    <li>Routes with Percentages Left</li>
-                    <li>Route Totals</li>
-                </ul>
-            </p>
+            <a href="index.php?action=reports" class="sidebar">Route Listing</a><br>
+            <a href="index.php?action=reports" class="sidebar">Routes with Percentages Left</a><br>
+            <a href="index.php?action=reports" class="sidebar">Route Totals</a>
         </div>
     </div>
     </div>

@@ -45,7 +45,7 @@ function ChangeResident() {
 /*** Route Related Functions ***/
 function ListRoutes() {
     $result = Db::getResult('SELECT rtcode, description FROM routes ORDER BY rtcode ASC');
-        foreach($result as $key=>$varRoutes){
+        foreach($result as $varRoutes){
             echo '<option name="'.$varRoutes['rtcode'].'" value="'.$varRoutes['rtcode'].'">'.$varRoutes['rtcode'].' - '.$varRoutes['description'].'</option>';
         }
 }
@@ -62,4 +62,11 @@ function UpdateRouteAssignment() {
     Db::execute('UPDATE routes SET assignment = :varRouteAssignment WHERE rtcode = :varRouteId', $arrRouteAssignment);
     $varResult = Db::getRow('SELECT * FROM routes WHERE rtcode = ?', $arrRouteAssignment['varRouteId']);
     echo 'Update Completed. Route assigned to '.$varResult['assignment'];
+}
+
+function RouteReport() {
+    $varResult = Db::getResult('SELECT * FROM routes ORDER BY rtcode');
+        foreach($varResult as $varRouteReport){
+            echo '<tr><td>'.$varRouteReport['rtcode'].' - '.$varRouteReport['description'].'</td><td>'.$varRouteReport['assignment'].'</td></tr>';
+        }
 }
