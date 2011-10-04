@@ -64,9 +64,17 @@ function UpdateRouteAssignment() {
     echo 'Update Completed. Route assigned to '.$varResult['assignment'];
 }
 
+/* @todo: Need to write CSS and remove inline styles. */
+
 function RouteReport() {
     $varResult = Db::getResult('SELECT * FROM routes ORDER BY rtcode');
+        echo '<div id="routedesc" style="float: left; top: 0; left: 0; width: 50%;">';
         foreach($varResult as $varRouteReport){
-            echo '<tr><td>'.$varRouteReport['rtcode'].' - '.$varRouteReport['description'].'</td><td>'.$varRouteReport['assignment'].'</td></tr>';
+            echo $varRouteReport['rtcode'].' - '.$varRouteReport['description'].'<br>';
+        }
+        echo '</div>';
+        echo '<div id="routeassignment" style="float: left; top: 0; right: 0; width: 50%">';
+        foreach($varResult as $varRouteReport){
+            echo $varRouteReport['assignment'].'<br>';
         }
 }

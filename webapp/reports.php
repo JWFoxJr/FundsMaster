@@ -8,12 +8,7 @@
  */
  
 ?>
-    <div id="body>">
-        <table>
-            <tr>
-                <th>Route and Description</th>
-                <th>Assignment</th>
-            </tr>
-            <?php RouteReport(); ?>
-        </table>
+    <div id="body">
+        <?php RouteReport(); ?>
     </div>
+    <div style="clear: both;"></div>
