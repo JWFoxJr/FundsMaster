@@ -11,4 +11,4 @@
     <div id="body">
         <?php RouteReport(); ?>
     </div>
-    <div style="clear: both;"></div>
+

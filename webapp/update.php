@@ -54,6 +54,7 @@
             <select id="txtHint" name="lstSelectHouse" size="5"></select>
             <div style="text-align: center; width: 80%"><input type="submit" name="btnSelectHouse" value="Select House"></div>
             </form>
+        </div>
 
 <?php
     }
