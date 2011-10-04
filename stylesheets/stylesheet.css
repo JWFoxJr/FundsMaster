@@ -58,3 +58,10 @@ float:left;
 text-align:right;
 padding-right: 10px;
 }
+
+div.RouteReport {
+    float: left;
+    top: 0; left: 0;
+    width: 100%;
+    font-size: .8em;
+}

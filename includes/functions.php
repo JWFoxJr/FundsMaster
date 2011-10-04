@@ -68,13 +68,13 @@ function UpdateRouteAssignment() {
 
 function RouteReport() {
     $varResult = Db::getResult('SELECT * FROM routes ORDER BY rtcode');
-        echo '<div id="routedesc" style="float: left; top: 0; left: 0; width: 50%;">';
+        echo '<div id="RouteReport" class="RouteReport">'."\n";
+        echo '<table border="0" cellpadding="0" cellspacing="0" width="100%">';
+        echo '<tr><th><h3>Route</h3></th><th><h3>Assignment</h3></th></tr>';
         foreach($varResult as $varRouteReport){
-            echo $varRouteReport['rtcode'].' - '.$varRouteReport['description'].'<br>';
+            echo '<tr><td>'.$varRouteReport['rtcode'].' - '.$varRouteReport['description'].'</td>';
+            echo '<td>'.$varRouteReport['assignment'].'</td></tr>';
         }
+        echo '</table>';
         echo '</div>';
-        echo '<div id="routeassignment" style="float: left; top: 0; right: 0; width: 50%">';
-        foreach($varResult as $varRouteReport){
-            echo $varRouteReport['assignment'].'<br>';
-        }
 }
