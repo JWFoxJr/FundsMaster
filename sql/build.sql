@@ -12,7 +12,7 @@ CREATE TABLE `address` (
 	`id` INT(5) NOT NULL AUTO_INCREMENT,
 	`rtcode` INT(4) NOT NULL,
 	`resident` VARCHAR(50) NOT NULL,
-	`house` CHAR(4) NOT NULL,
+	`house` INT(4) NOT NULL,
 	`apt` CHAR(4),
 	`street` VARCHAR(50) NOT NULL,
 	`suffix` VARCHAR(10),
