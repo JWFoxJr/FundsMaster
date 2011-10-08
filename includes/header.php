@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>FundsMaster Console</title>
-    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="images/favicon.ico">
-    <script type="text/javascript" src="extlib/jquery/js/jquery-1.6.2.min.js"></script>
-    <script type="text/javascript" src="extlib/jquery/js/jquery-ui-1.8.15.custom.min.js"></script>
-    <script type="text/javascript" src="js/functions.js"></script>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" />
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <script src="extlib/jquery/js/jquery-1.6.2.min.js"></script>
+    <script src="extlib/jquery/js/jquery-ui-1.8.15.custom.min.js"></script>
+    <script src="js/functions.js"></script>
+    <link rel="stylesheet" href="stylesheets/stylesheet.css" />
     <script>
 	    $(function() {
 		    $( "#accordion" ).accordion({
