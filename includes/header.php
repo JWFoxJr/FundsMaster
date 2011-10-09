@@ -21,7 +21,7 @@
 <body>
     <div id="main">
         <div id="logo" style="float: left">
-            <img src="images/logo.png" border="0">
+            <img src="images/logo.png" alt="Reserve Hose Company">
         </div>
         <div id="title" style="float: right; background-color: #ffffff; padding-right: 250px; color: #00008b;">
             <p class="title">FundsMaster</p>

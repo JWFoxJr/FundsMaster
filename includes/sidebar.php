@@ -14,23 +14,15 @@
 		</div>
 	    <h3><a href="#" class="sidebar">Current Year Master Menu</a></h3>
 	    <div>
-		    <p>
-    		    <ul>
-                    <li>Entry by ID</li>
-                    <li>Entry by Street</li>
-                    <li>Entry by Route</li>
-                </ul>
-		    </p>
+    		<a href="#" class="sidebar">Entry by ID</a>
+            <a href="#" class="sidebar">Entry by Street</a>
+            <a href="#" class="sidebar">Entry by Route</a>
 	    </div>
 	    <h3><a href="#" class="sidebar">History</a></h3>
 	    <div>
-		    <p>
-		        <ul>
-                    <li>Create Historical Table</li>
-                    <li>History Cross Reference</li>
-                    <li>Historical Top Contributors</li>
-                </ul>
-    		</p>
+            <a href="#">Create Historical Table</a>
+            <a href="#">History Cross Reference</a>
+            <a href="#">Historical Top Contributors</a>
 	    </div>
         <h3><a href="#" class="sidebar">Reports</a></h3>
         <div>
